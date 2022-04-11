@@ -39,11 +39,18 @@ namespace DeviantScroller
             }
             string url = o["results"][0]["url"].ToString();
             string title = o["results"][0]["title"].ToString();
-            string imageURL = o["results"][0]["content"]["src"].ToString();
             string author = o["results"][0]["author"]["username"].ToString();
+            try
+            {
+                ptbArt.ImageLocation = o["results"][0]["content"]["src"].ToString();
+            }
+            catch(NullReferenceException err)
+            {
+                // TODO give user an error
+            }
             lnkDev.Text = url;
             lbl_deviation_info.Text = "Title: " + title + "\nDeviant: " + author + "\nPosition in Gallery: " + offset;
-            ptbArt.ImageLocation = imageURL;
+            
         }
 
         private async void btnUpdateUser_Click(object sender, EventArgs e)
