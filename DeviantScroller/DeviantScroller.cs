@@ -26,7 +26,6 @@ namespace DeviantScroller
             if (gallerySize == 0) return; // to prevent exceptions
             int offset = _random.Next(0, gallerySize - 1);
             Debug.WriteLine("Offset: " + offset);
-            lblImageNum.Text = "Image Num: " + offset;
             var temp = await deviantCaller.CollectionsFolderID(folderID, username, gallerySize, offset);
             JObject o = JObject.Parse(temp);
 
@@ -38,15 +37,13 @@ namespace DeviantScroller
                 temp = await deviantCaller.CollectionsFolderID(folderID, username, gallerySize, offset);
                 o = JObject.Parse(temp);
             }
-            lblImageNum.Text = "Image Num: " + offset;
             string url = o["results"][0]["url"].ToString();
             string title = o["results"][0]["title"].ToString();
             string imageURL = o["results"][0]["content"]["src"].ToString();
             string author = o["results"][0]["author"]["username"].ToString();
             lnkDev.Text = url;
-            lblTitle.Text = title;
+            lbl_deviation_info.Text = "Title: " + title + "\nDeviant: " + author + "\nPosition in Gallery: " + offset;
             ptbArt.ImageLocation = imageURL;
-            lblAuthor.Text = author;
         }
 
         private async void btnUpdateUser_Click(object sender, EventArgs e)
@@ -74,5 +71,6 @@ namespace DeviantScroller
             folderID = temp.GetFolderID();
         }
 
+   
     }
 }
