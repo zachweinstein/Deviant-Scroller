@@ -22,8 +22,6 @@ DeviantArt lacks a 'random' button. This Visual C# program allows the user to ra
 
 2. Add the client_id and client_secret to DeviantScroller.cs
 
-    > private string client_id = "CLIENT_ID"; // replace this
+    > private DeviantCaller deviantCaller = new DeviantCaller("CLIENT_ID", "CLIENT_SECRET"); // replace CLIENT_ID and CLIENT_SECRET
 
-    > private string client_secret = "CLIENT_SECRET"; // replace this
-
-The application should now be able to compile
+The application should now be able to compile.
