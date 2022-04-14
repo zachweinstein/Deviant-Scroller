@@ -17,3 +17,13 @@ DeviantArt lacks a 'random' button. This Visual C# program allows the user to ra
     Your application settings should look like this:
 
     ![Application Settings](https://i.imgur.com/8IMFWAJ.png)
+
+    * Save the application, make note of the client_id and client_secret
+
+2. Add the client_id and client_secret to DeviantScroller.cs
+
+    > private string client_id = "CLIENT_ID"; // replace this
+
+    > private string client_secret = "CLIENT_SECRET"; // replace this
+
+The application should now be able to compile
