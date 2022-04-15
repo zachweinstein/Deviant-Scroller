@@ -1,6 +1,6 @@
 # Deviant-Scroller
 
-DeviantArt lacks a 'random' button. This Visual C# program allows the user to randomly select deviations from a user's gallery.
+DeviantArt lacks a 'random' button. This Visual C# program allows the user to randomly select deviations from a user's favourites folders.
 
 ## Setup
 
